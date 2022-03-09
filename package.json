@@ -2,9 +2,11 @@
   "type": "module",
   "dependencies": {
     "arweave": "^1.10.23",
+    "detect-content-type": "^1.2.0",
     "fast-xml-parser": "^4.0.1",
     "glob": "^7.2.0",
     "glob-fs": "^0.1.7",
-    "redstone-smartweave": "^0.4.29"
+    "redstone-smartweave": "^0.4.29",
+    "string-strip-html": "^9.1.6"
   }
 }
