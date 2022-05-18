@@ -1,12 +1,27 @@
 {
+  "name": "permacast-cli-test",
+  "version": "0.0.1",
   "type": "module",
+  "description": "permacast cli",
+  "main": "./scripts/upload.js",
+  "scripts": {
+    "start": "node ./scripts/upload.js"
+  },
+  "keywords": [
+    "permacast"
+  ],
+  "author": "charmful0x",
+  "license": "MIT",
   "dependencies": {
     "arweave": "^1.10.23",
+    "axios": "^0.27.2",
+    "buffer-to-arraybuffer": "^0.0.6",
     "detect-content-type": "^1.2.0",
     "fast-xml-parser": "^4.0.1",
     "glob": "^7.2.0",
     "glob-fs": "^0.1.7",
     "redstone-smartweave": "^0.4.29",
-    "string-strip-html": "^9.1.6"
+    "string-strip-html": "^9.1.6",
+    "xml2js": "^0.4.23"
   }
 }
