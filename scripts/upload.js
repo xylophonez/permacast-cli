@@ -15,13 +15,12 @@ const arweave = Arweave.init({
   timeout: 100000,
 });
 
-const CONTRACT_SRC = "KrMNSCljeT0sox8bengHf0Z8dxyE0vCTLEAOtkdrfjM";
 const NFT_SRC = "-xoIBH2TxLkVWo6XWAjdwXZmTbUH09_hPYD6itHFeZY";
 
 const smartweave = SmartWeaveWebFactory.memCached(arweave);
 const parser = new XMLParser();
 const RSS_URL = "https://terraspaces.org/feed/podcast/";
-const SHOW_ID = "IKsjaUBJiKNDtLPIOyobkUM6iPtTKAK2bMDBu30KdmE"; // TERRASPACE.ORG PODCAST ID
+const SHOW_ID = "IKsjaUBJiKNDtLPIOyobkUM6iPtTKAK2bMDBu30KdmE"; // TERRASPACE.ORG PODCAST ID (PID)
 const podcastsEndpoint =
   "https://whispering-retreat-94540.herokuapp.com/feeds/podcasts"; // PERMACAST CACHE NODE ENDPOINT
 
@@ -129,7 +128,7 @@ async function getMetadata() {
 
 const addShowtoState = async (show) => {
   const metadata = await getMetadata();
-  const contractId = metadata.childOf;
+  const contractId = metadata.newChildOf ? metadata.newChildOf : metadata.childOf;
   const pid = metadata.pid;
 
   let input = {
